@@ -1,11 +1,11 @@
-from flask import Flask, render_template, request,jsonify
+from flask import Flask, render_template, request
 import pandas as pd
 from data_preprocess import preprocess
 import pickle
 app = Flask(__name__)
 model = pickle.load(open('model.pkl', 'rb'))
 
-@app.route('/predict', methods=['POST'])
+@app.route('/predict/', methods=['POST'])
 def predict_reaction_rate(preprocessed_data):
     EC_C = float(request.form['EC_C'])
     BC_C = float(request.form['BC_C'])
