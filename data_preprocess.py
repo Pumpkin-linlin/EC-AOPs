@@ -10,7 +10,7 @@ def preprocess(input_data):
         transformed_data = (x ** lambda_values[col] - 1) / lambda_values[col]
         input_data[col] = transformed_data
     preprocessed_data = input_data
-    # 2-2.使用原始数据的最小值和最大值进行缩放
+    # minmaxscaler
     features = ['EC-C', 'BC-C', 'PMS-C', 'pH', 'Bio', 'T', 'O/C', 'Id/Ig', 'SSA', 'VIP', 'Gap', 'HN']
     for col in features:
         x = input_data[col]
